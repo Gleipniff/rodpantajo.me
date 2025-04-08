@@ -68,18 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
@@ -110,29 +103,67 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', highlightNavLink);
     
-    // Theme toggle (dark/light mode)
+    // Theme toggle functionality
     const themeToggle = document.querySelector('.theme-toggle');
-    
-    // Check for saved theme preference or use device preference
+    const body = document.body;
+    const sunIcon = document.querySelector('.fa-sun');
+    const moonIcon = document.querySelector('.fa-moon');
+
+    // Check saved theme or system preference
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-    } else if (savedTheme === 'light') {
-        document.body.classList.add('light-theme');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Set initial theme
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        body.classList.add('dark-theme');
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+    } else {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
     }
-    
-    themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-theme');
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        const isDark = body.classList.contains('dark-theme');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
         
-        // Save theme preference
-        if (document.body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
+        sunIcon.style.display = isDark ? 'none' : 'block';
+        moonIcon.style.display = isDark ? 'block' : 'none';
     });
+
+    // Set active navigation link based on current page
+    function setActiveNavLink() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+
+    setActiveNavLink();
+
+    function updateMobileNav() {
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const hamburger = document.querySelector('.hamburger');
+        const mobileNav = document.querySelector('.mobile-nav');
+        
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    }
+
+    updateMobileNav();
     
     // Custom cursor
     const cursorDot = document.querySelector('.cursor-dot');
