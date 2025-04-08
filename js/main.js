@@ -368,4 +368,28 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
+    
+    // Add page transition effect
+    const pageTransition = () => {
+        document.body.classList.add('fade-out');
+        
+        const links = document.querySelectorAll('a[href]:not([target="_blank"])');
+        links.forEach(link => {
+            link.addEventListener('click', e => {
+                if (link.hostname === window.location.hostname) {
+                    e.preventDefault();
+                    const dest = link.href;
+                    
+                    document.body.classList.add('fade-out');
+                    
+                    setTimeout(() => {
+                        window.location.href = dest;
+                    }, 500);
+                }
+            });
+        });
+    };
+    
+    // Initialize page transition
+    pageTransition();
 });

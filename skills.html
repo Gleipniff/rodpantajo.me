@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Common head content -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rod Julian Pantajo | [Page Title]</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#hero">
+                    <span class="logo-text">Rod<span class="highlight">.</span></span>
+                </a>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </div>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="#hero" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="#skills" class="mobile-nav-link">Skills</a></li>
+            <li class="mobile-nav-item"><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li class="mobile-nav-item"><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+    <main>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Skills</h2>
+                    <p class="section-subtitle">Technical expertise</p>
+                </div>
+                
+                <div class="skills-content">
+                    <div class="skills-tabs">
+                        <button class="tab-btn active" data-target="frontend">Frontend</button>
+                        <button class="tab-btn" data-target="backend">Backend</button>
+                        <button class="tab-btn" data-target="design">Design</button>
+                    </div>
+                    
+                    <div class="skills-tab-content">
+                        <!-- Frontend Skills -->
+                        <div class="tab-pane active" id="frontend">
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-html5"></i>
+                                    </div>
+                                    <h3 class="skill-title">HTML5</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90%"></div>
+                                    </div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-css3-alt"></i>
+                                    </div>
+                                    <h3 class="skill-title">CSS3</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85%"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-js"></i>
+                                    </div>
+                                    <h3 class="skill-title">JavaScript</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="75%"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-react"></i>
+                                    </div>
+                                    <h3 class="skill-title">React</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="70%"></div>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-bootstrap"></i>
+                                    </div>
+                                    <h3 class="skill-title">Bootstrap</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="80%"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-sass"></i>
+                                    </div>
+                                    <h3 class="skill-title">Sass</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="65%"></div>
+                                    </div>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Backend Skills -->
+                        <div class="tab-pane" id="backend">
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-php"></i>
+                                    </div>
+                                    <h3 class="skill-title">PHP</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="65%"></div>
+                                    </div>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-python"></i>
+                                    </div>
+                                    <h3 class="skill-title">Python</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="70%"></div>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <h3 class="skill-title">MySQL</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="75%"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-node-js"></i>
+                                    </div>
+                                    <h3 class="skill-title">Node.js</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="60%"></div>
+                                    </div>
+                                    <span class="skill-percentage">60%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <h3 class="skill-title">REST API</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="65%"></div>
+                                    </div>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-wordpress"></i>
+                                    </div>
+                                    <h3 class="skill-title">WordPress</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="75%"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Design Skills -->
+                        <div class="tab-pane" id="design">
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-figma"></i>
+                                    </div>
+                                    <h3 class="skill-title">Figma</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="70%"></div>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-bezier-curve"></i>
+                                    </div>
+                                    <h3 class="skill-title">Adobe XD</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="65%"></div>
+                                    </div>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <h3 class="skill-title">UI/UX Design</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="70%"></div>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-photo-video"></i>
+                                    </div>
+                                    <h3 class="skill-title">Photoshop</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="55%"></div>
+                                    </div>
+                                    <span class="skill-percentage">55%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-pencil-ruler"></i>
+                                    </div>
+                                    <h3 class="skill-title">Illustrator</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="50%"></div>
+                                    </div>
+                                    <span class="skill-percentage">50%</span>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <h3 class="skill-title">Responsive Design</h3>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85%"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>   
+        <!-- End of Skills Section -->
+              
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#hero">
+                        <span class="logo-text">Rod<span class="highlight">.</span></span>
+                    </a>
+                    <p class="footer-description">Frontend Developer creating modern and responsive web applications focused on user experience.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-nav">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Carles, Iloilo, Philippines</li>
+                        <li><i class="fas fa-envelope"></i> rjpantajo@usa.edu.ph</li>
+                        <li><i class="fas fa-phone-alt"></i> +63 998 939 3577</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p>Subscribe to receive updates on new projects and announcements.</p>
+                    <form class="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Rod Julian Pantajo. All Rights Reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -78,13 +78,19 @@ html {
     scroll-padding-top: 80px;
 }
 
+/* Page Transitions */
 body {
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     color: var(--text-color);
     background-color: var(--bg-color);
-    transition: background-color var(--transition-fast), color var(--transition-fast);
+    transition: background-color var(--transition-fast), color var(--transition-fast), opacity 0.5s;
     overflow-x: hidden;
+    opacity: 1;
+}
+
+body.fade-out {
+    opacity: 0;
 }
 
 h1, h2, h3, h4 {
@@ -318,6 +324,11 @@ button {
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
+}
+
+/* Active nav link for current page */
+.nav-link[href^="./"][href$=".html"] {
+    color: var(--primary-color);
 }
 
 .theme-toggle {
