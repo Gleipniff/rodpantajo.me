@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Rod Julian Pantajo - Frontend Web Developer Portfolio">
+    <meta name="keywords" content="frontend, web developer, portfolio, javascript, html, css">
+    <meta name="author" content="Rod Julian Pantajo">
+    
+    <title>Rod Julian Pantajo | Frontend Developer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Preload Hero Image -->
+    <link rel="preload" as="image" href="assets/img/profile.jpg">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#hero">
+                    <span class="logo-text">Rod<span class="highlight">.</span></span>
+                </a>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </div>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="#hero" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="#skills" class="mobile-nav-link">Skills</a></li>
+            <li class="mobile-nav-item"><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li class="mobile-nav-item"><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="greeting">Hello, I'm</span>
+                        <span class="name">Rod Julian Pantajo</span>
+                        <span class="profession">Frontend Developer</span>
+                    </h1>
+                    <p class="hero-description">I build exceptional digital experiences with clean, efficient code and creative problem-solving.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="assets/img/profile.jpg" alt="Rod Julian Pantajo" class="profile-image">
+                    </div>
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                        <div class="shape shape-4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">My introduction</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="assets/img/about.jpg" alt="About Rod Julian Pantajo">
+                    </div>
+                    <div class="experience-badge">
+                        <span class="number">3+</span>
+                        <span class="text">Years of<br>Experience</span>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <p>I'm a passionate Frontend Developer with a strong foundation in web technologies and a keen eye for design. With a Bachelor's degree in Information Technology from the University of San Agustin, I combine technical expertise with creative problem-solving to build engaging user experiences.</p>
+                    
+                    <div class="about-info">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="info-text">
+                                <h3>Education</h3>
+                                <p>BS in Information Technology</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="info-text">
+                                <h3>Experience</h3>
+                                <p>Project Management & Development</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="info-text">
+                                <h3>Completed</h3>
+                                <p>10+ Web Projects</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-primary download-cv">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Skills</h2>
+                <p class="section-subtitle">Technical expertise</p>
+            </div>
+            
+            <div class="skills-content">
+                <div class="skills-tabs">
+                    <button class="tab-btn active" data-target="frontend">Frontend</button>
+                    <button class="tab-btn" data-target="backend">Backend</button>
+                    <button class="tab-btn" data-target="design">Design</button>
+                </div>
+                
+                <div class="skills-tab-content">
+                    <!-- Frontend Skills -->
+                    <div class="tab-pane active" id="frontend">
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <h3 class="skill-title">HTML5</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90%"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <h3 class="skill-title">CSS3</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85%"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                <h3 class="skill-title">JavaScript</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75%"></div>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <h3 class="skill-title">React</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70%"></div>
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-bootstrap"></i>
+                                </div>
+                                <h3 class="skill-title">Bootstrap</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80%"></div>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-sass"></i>
+                                </div>
+                                <h3 class="skill-title">Sass</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65%"></div>
+                                </div>
+                                <span class="skill-percentage">65%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend Skills -->
+                    <div class="tab-pane" id="backend">
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <h3 class="skill-title">PHP</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65%"></div>
+                                </div>
+                                <span class="skill-percentage">65%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <h3 class="skill-title">Python</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70%"></div>
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h3 class="skill-title">MySQL</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75%"></div>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <h3 class="skill-title">Node.js</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="60%"></div>
+                                </div>
+                                <span class="skill-percentage">60%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <h3 class="skill-title">REST API</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65%"></div>
+                                </div>
+                                <span class="skill-percentage">65%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-wordpress"></i>
+                                </div>
+                                <h3 class="skill-title">WordPress</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75%"></div>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Design Skills -->
+                    <div class="tab-pane" id="design">
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-figma"></i>
+                                </div>
+                                <h3 class="skill-title">Figma</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70%"></div>
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-bezier-curve"></i>
+                                </div>
+                                <h3 class="skill-title">Adobe XD</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65%"></div>
+                                </div>
+                                <span class="skill-percentage">65%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h3 class="skill-title">UI/UX Design</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70%"></div>
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-photo-video"></i>
+                                </div>
+                                <h3 class="skill-title">Photoshop</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="55%"></div>
+                                </div>
+                                <span class="skill-percentage">55%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-pencil-ruler"></i>
+                                </div>
+                                <h3 class="skill-title">Illustrator</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="50%"></div>
+                                </div>
+                                <span class="skill-percentage">50%</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h3 class="skill-title">Responsive Design</h3>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85%"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">Recent work</p>
+            </div>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="app">App</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img">
+                        <img src="assets/img/projects/project-1.jpg" alt="Online Tourism Website">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Online Tourism Website</h3>
+                        <p class="project-description">A web application for information and planning tourist vacations. Built with HTML, CSS, JavaScript, and PHP/MySQL.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-category="app">
+                    <div class="project-img">
+                        <img src="assets/img/projects/project-2.jpg" alt="Health Management System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Health Management System</h3>
+                        <p class="project-description">A health management system that automates health tracking and fine calculation processes, reducing manual workload by 50%.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img">
+                        <img src="assets/img/projects/project-3.jpg" alt="E-Commerce Platform">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">A fully responsive e-commerce website with product filtering, cart functionality, and secure checkout process.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Express</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-category="design">
+                    <div class="project-img">
+                        <img src="assets/img/projects/project-4.jpg" alt="Portfolio Design">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Design</h3>
+                        <p class="project-description">A modern portfolio design with smooth animations and interactive elements, built with HTML, CSS, and JavaScript.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">GSAP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-category="app">
+                    <div class="project-img">
+                        <img src="assets/img/projects/project-5.jpg" alt="Task Management App">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">A task management application with drag-and-drop functionality, user authentication, and real-time updates.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Redux</span>
+                            <span class="tag">Material UI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card" data-category="design">
+                    <div class="project-img">
+                        <img src="assets/img/projects/project-6.jpg" alt="Mobile App UI Design">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mobile App UI Design</h3>
+                        <p class="project-description">A clean and modern UI design for a mobile application, created with Figma and Adobe XD.</p>
+                        <div class="project-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Adobe XD</span>
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Prototyping</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="project-link"><i class="fab fa-behance"></i> Behance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="projects-more">
+                <a href="#" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Testimonials</h2>
+                <p class="section-subtitle">What clients say</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonials-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">Rod delivered an exceptional website that exceeded our expectations. His attention to detail and creative approach resulted in a user-friendly platform that perfectly represents our brand.</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="assets/img/testimonials/testimonial-1.jpg" alt="Client">
+                            </div>
+                            <div class="author-info">
+                                <h3 class="author-name">Sarah Johnson</h3>
+                                <p class="author-position">Marketing Director</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">Working with Rod was a pleasure. He understood our requirements perfectly and delivered a responsive, modern website that has significantly improved our online presence and user engagement.</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="assets/img/testimonials/testimonial-2.jpg" alt="Client">
+                            </div>
+                            <div class="author-info">
+                                <h3 class="author-name">Michael Chen</h3>
+                                <p class="author-position">CEO, TechStart</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">Rod's expertise in frontend development transformed our outdated website into a modern, user-friendly platform. His technical skills and creative vision were instrumental in the project's success.</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="assets/img/testimonials/testimonial-3.jpg" alt="Client">
+                            </div>
+                            <div class="author-info">
+                                <h3 class="author-name">Emily Rodriguez</h3>
+                                <p class="author-position">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-controls">
+                    <button class="control-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonials-dots"></div>
+                    <button class="control-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-subtitle">Get in touch</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3 class="contact-card-title">Location</h3>
+                            <p class="contact-card-text">Carles, Iloilo, Philippines</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3 class="contact-card-title">Email</h3>
+                            <p class="contact-card-text">
+                                <a href="mailto:rjpantajo@usa.edu.ph">rjpantajo@usa.edu.ph</a><br>
+                                <a href="mailto:rodjulianpantajo@yahoo.com">rodjulianpantajo@yahoo.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3 class="contact-card-title">Phone</h3>
+                            <p class="contact-card-text">
+                                <a href="tel:+639989393577">+63 998 939 3577</a><br>
+                                <a href="tel:+639948215172">+63 994 821 5172</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h3 class="social-title">Follow Me</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <div class="input-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <div class="input-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <div class="input-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-clipboard"></i>
+                                </div>
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <div class="input-group textarea-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-comment-alt"></i>
+                                </div>
+                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#hero">
+                        <span class="logo-text">Rod<span class="highlight">.</span></span>
+                    </a>
+                    <p class="footer-description">Frontend Developer creating modern and responsive web applications focused on user experience.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-nav">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Carles, Iloilo, Philippines</li>
+                        <li><i class="fas fa-envelope"></i> rjpantajo@usa.edu.ph</li>
+                        <li><i class="fas fa-phone-alt"></i> +63 998 939 3577</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p>Subscribe to receive updates on new projects and announcements.</p>
+                    <form class="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Rod Julian Pantajo. All Rights Reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>
