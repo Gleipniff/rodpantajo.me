@@ -110,71 +110,161 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', highlightNavLink);
     
-    // Theme toggle (dark/light mode)
-    const themeToggle = document.querySelector('.theme-toggle');
-    
-    // Check for saved theme preference or use device preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-    } else if (savedTheme === 'light') {
-        document.body.classList.add('light-theme');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark-theme');
-    }
-    
-    themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-theme');
-        
-        // Save theme preference
-        if (document.body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
+    // Enhanced theme toggle system
+    const ThemeManager = {
+        init() {
+            this.themeToggle = document.querySelector('.theme-toggle');
+            this.moonIcon = this.themeToggle.querySelector('.fa-moon');
+            this.sunIcon = this.themeToggle.querySelector('.fa-sun');
+            
+            // Check saved preference or system theme
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.body.classList.add('dark-theme');
+            }
+            
+            this.updateIcons();
+            this.bindEvents();
+        },
+
+        bindEvents() {
+            this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)')
+                .addEventListener('change', (e) => this.handleSystemThemeChange(e));
+        },
+
+        toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            this.updateIcons();
+            this.savePreference();
+        },
+
+        updateIcons() {
+            const isDark = document.body.classList.contains('dark-theme');
+            this.moonIcon.style.display = isDark ? 'none' : 'block';
+            this.sunIcon.style.display = isDark ? 'block' : 'none';
+        },
+
+        savePreference() {
+            const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        },
+
+        handleSystemThemeChange(e) {
+            if (!localStorage.getItem('theme')) {
+                document.body.classList.toggle('dark-theme', e.matches);
+                this.updateIcons();
+            }
         }
-    });
-    
-    // Custom cursor
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-dot-outline');
-    
-    if (window.innerWidth > 768) {
-        window.addEventListener('mousemove', function(e) {
-            const posX = e.clientX;
-            const posY = e.clientY;
+    };
+
+    // Enhanced custom cursor system
+    const CursorManager = {
+        init() {
+            this.dot = document.querySelector('.cursor-dot');
+            this.outline = document.querySelector('.cursor-dot-outline');
             
-            cursorDot.style.opacity = '1';
-            cursorOutline.style.opacity = '1';
+            if (window.matchMedia('(pointer: fine)').matches && this.dot && this.outline) {
+                this.setupCursor();
+                this.bindEvents();
+            } else {
+                this.hideCursor();
+            }
+        },
+
+        setupCursor() {
+            this.dot.style.opacity = '1';
+            this.outline.style.opacity = '1';
+            this.posX = 0;
+            this.posY = 0;
+        },
+
+        bindEvents() {
+            document.addEventListener('mousemove', (e) => this.moveCursor(e));
+            document.addEventListener('mousedown', () => this.addCursorState('click'));
+            document.addEventListener('mouseup', () => this.removeCursorState('click'));
             
-            // Cursor dot follows cursor exactly
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            
-            // Cursor outline follows with a slight delay
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: 'forwards' });
-        });
-        
-        // Cursor effects on interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .btn, input, textarea, .project-card, .skill-item, .testimonial-card');
-        
-        interactiveElements.forEach(element => {
-            element.addEventListener('mouseenter', function() {
-                cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursorOutline.style.border = '2px solid var(--primary-color-light)';
+            this.setupInteractiveElements();
+        },
+
+        setupInteractiveElements() {
+            const interactiveElements = document.querySelectorAll(
+                'a, button, .btn, input, textarea, .project-card, .skill-item'
+            );
+
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    this.addCursorState('hover');
+                    this.startMagneticEffect(element);
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    this.removeCursorState('hover');
+                    this.stopMagneticEffect(element);
+                });
             });
-            
-            element.addEventListener('mouseleave', function() {
-                cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursorOutline.style.border = '2px solid var(--primary-color)';
+        },
+
+        moveCursor(e) {
+            // Smooth cursor movement with acceleration
+            if (!this.posX) {
+                this.posX = e.clientX;
+                this.posY = e.clientY;
+            }
+
+            this.posX += (e.clientX - this.posX) * 0.15;
+            this.posY += (e.clientY - this.posY) * 0.15;
+
+            requestAnimationFrame(() => {
+                this.dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+                this.outline.style.transform = `translate(${this.posX}px, ${this.posY}px)`;
             });
-        });
-    }
-    
+        },
+
+        addCursorState(state) {
+            this.dot.classList.add(`cursor-${state}`);
+            this.outline.classList.add(`cursor-${state}`);
+        },
+
+        removeCursorState(state) {
+            this.dot.classList.remove(`cursor-${state}`);
+            this.outline.classList.remove(`cursor-${state}`);
+        },
+
+        startMagneticEffect(element) {
+            element.addEventListener('mousemove', this.handleMagneticMove);
+        },
+
+        stopMagneticEffect(element) {
+            element.removeEventListener('mousemove', this.handleMagneticMove);
+            element.style.transform = '';
+        },
+
+        handleMagneticMove(e) {
+            const rect = this.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            const deltaX = e.clientX - centerX;
+            const deltaY = e.clientY - centerY;
+            
+            this.style.transform = `translate(${deltaX * 0.2}px, ${deltaY * 0.2}px)`;
+        },
+
+        hideCursor() {
+            if (this.dot) this.dot.style.display = 'none';
+            if (this.outline) this.outline.style.display = 'none';
+        }
+    };
+
+    // Initialize managers after DOM loads
+    ThemeManager.init();
+    CursorManager.init();
+
     // Initialize skill progress bars
     function initSkillBars() {
         const skillBars = document.querySelectorAll('.skill-progress');

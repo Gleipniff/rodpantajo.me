@@ -8,6 +8,29 @@
     <meta name="keywords" content="frontend, web developer, portfolio, javascript, html, css">
     <meta name="author" content="Rod Julian Pantajo">
     
+    <!-- Theme Color for browsers -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-navbutton-color" content="#2563eb">
+    <meta name="apple-mobile-web-status-bar-style" content="black-translucent">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Rod Julian Pantajo - Frontend Developer">
+    <meta property="og:description" content="Portfolio website showcasing frontend development projects and skills">
+    <meta property="og:image" content="https://rodpantajo.me/assets/img/profile.jpg">
+    <meta property="og:url" content="https://rodpantajo.me">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rod Julian Pantajo - Frontend Developer">
+    <meta name="twitter:description" content="Portfolio website showcasing frontend development projects and skills">
+    <meta name="twitter:image" content="https://rodpantajo.me/assets/img/profile.jpg">
+    
+    <!-- Cache control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <title>Rod Julian Pantajo | Frontend Developer</title>
     
     <!-- Favicon -->
@@ -55,9 +78,9 @@
                 </a>
             </div>
             
-            <nav class="nav">
+            <nav class="nav" aria-label="Main navigation">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#hero" class="nav-link active" aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
                     <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
@@ -65,16 +88,19 @@
                 </ul>
             </nav>
             
-            <div class="theme-toggle">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
+            <div class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+                <i class="fas fa-sun" aria-hidden="true"></i>
             </div>
             
-            <div class="hamburger">
+            <button class="hamburger" 
+                    aria-label="Toggle menu" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-nav">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
     
@@ -183,7 +209,13 @@
                         </div>
                     </div>
                     
-                    <a href="#" class="btn btn-primary download-cv">Download CV</a>
+                    <a href="assets/files/rod-julian-pantajo-cv.pdf" 
+                       class="btn btn-primary download-cv" 
+                       download 
+                       aria-label="Download CV">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                        <span>Download CV</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -731,40 +763,59 @@
                         <div class="form-group">
                             <label for="name">Name</label>
                             <div class="input-group">
-                                <div class="input-icon">
+                                <div class="input-icon" aria-hidden="true">
                                     <i class="fas fa-user"></i>
                                 </div>
-                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                <input type="text" 
+                                       id="name" 
+                                       name="name" 
+                                       placeholder="Your Name" 
+                                       required 
+                                       aria-required="true">
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email</label>
                             <div class="input-group">
-                                <div class="input-icon">
+                                <div class="input-icon" aria-hidden="true">
                                     <i class="fas fa-envelope"></i>
                                 </div>
-                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       placeholder="Your Email" 
+                                       required 
+                                       aria-required="true">
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="subject">Subject</label>
                             <div class="input-group">
-                                <div class="input-icon">
+                                <div class="input-icon" aria-hidden="true">
                                     <i class="fas fa-clipboard"></i>
                                 </div>
-                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                                <input type="text" 
+                                       id="subject" 
+                                       name="subject" 
+                                       placeholder="Subject" 
+                                       required 
+                                       aria-required="true">
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message</label>
                             <div class="input-group textarea-group">
-                                <div class="input-icon">
+                                <div class="input-icon" aria-hidden="true">
                                     <i class="fas fa-comment-alt"></i>
                                 </div>
-                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                                <textarea id="message" 
+                                          name="message" 
+                                          placeholder="Your Message" 
+                                          required 
+                                          aria-required="true"></textarea>
                             </div>
                         </div>
                         
@@ -836,8 +887,11 @@
     </footer>
     
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
+    <a href="#" 
+       class="back-to-top" 
+       aria-label="Scroll to top"
+       role="button">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </a>
     
     <!-- JavaScript Files -->

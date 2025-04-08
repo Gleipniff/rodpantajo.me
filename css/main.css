@@ -1,19 +1,22 @@
 /*=============== VARIABLES ===============*/
 :root {
-    /* Colors */
-    --primary-color: #1e3a8a; /* Professional dark blue */
-    --primary-color-light: #3b82f6;
-    --primary-color-dark: #1e40af;
-    --secondary-color: #f97316;
-    --text-color: #333333;
-    --text-color-light: #666666;
-    --bg-color: #ffffff;
-    --bg-color-alt: #f8fafc;
-    --border-color: #e2e8f0;
-    --success-color: #10b981;
-    --error-color: #ef4444;
-    --warning-color: #f59e0b;
-    
+    /* Colors - Light Mode */
+    --primary-color: #2563eb;          /* Brighter blue */
+    --primary-color-light: #3b82f6;    /* Lighter blue */
+    --primary-color-dark: #1d4ed8;     /* Darker blue */
+    --secondary-color: #f97316;        /* Orange accent */
+    --text-color: #1e293b;            /* Darker text */
+    --text-color-light: #64748b;      /* Medium gray */
+    --bg-color: #ffffff;              /* Pure white */
+    --bg-color-alt: #f1f5f9;         /* Light gray background */
+    --border-color: #e2e8f0;         /* Light border */
+    --success-color: #10b981;        /* Green */
+    --error-color: #ef4444;          /* Red */
+    --warning-color: #f59e0b;        /* Amber */
+    --card-bg: #ffffff;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                   0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
     /* Typography */
     --body-font: 'Poppins', sans-serif;
     --heading-font: 'Montserrat', sans-serif;
@@ -56,14 +59,17 @@
 
 /* Dark Theme Variables */
 .dark-theme {
-    --primary-color: #3b82f6;
-    --primary-color-light: #60a5fa;
-    --primary-color-dark: #2563eb;
-    --text-color: #e2e8f0;
-    --text-color-light: #94a3b8;
-    --bg-color: #0f172a;
-    --bg-color-alt: #1e293b;
-    --border-color: #334155;
+    --primary-color: #3b82f6;        /* Bright blue */
+    --primary-color-light: #60a5fa;  /* Lighter blue */
+    --primary-color-dark: #2563eb;   /* Darker blue */
+    --text-color: #f1f5f9;          /* Light gray text */
+    --text-color-light: #cbd5e1;    /* Lighter gray */
+    --bg-color: #0f172a;           /* Dark blue-black */
+    --bg-color-alt: #1e293b;      /* Navy blue */
+    --border-color: #334155;      /* Dark gray border */
+    --card-bg: #1e293b;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+                   0 4px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
 /*=============== BASE ===============*/
@@ -127,6 +133,14 @@ button {
 
 .section {
     padding: 6rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-header {
@@ -485,6 +499,28 @@ button {
     border-radius: var(--border-radius-medium);
     font-weight: var(--font-medium);
     transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: all 0.6s;
+}
+
+.btn:hover::after {
+    left: 100%;
 }
 
 .btn-primary {
@@ -837,16 +873,17 @@ button {
 }
 
 .skill-item {
-    background-color: var(--bg-color);
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
     padding: 1.5rem;
     border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow-small);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .skill-icon {
@@ -931,16 +968,17 @@ button {
 }
 
 .project-card {
-    background-color: var(--bg-color);
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
     border-radius: var(--border-radius-medium);
     overflow: hidden;
-    box-shadow: var(--shadow-small);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .project-img {
@@ -1028,11 +1066,18 @@ button {
 }
 
 .testimonial-card {
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
     min-width: 100%;
     padding: 2rem;
-    background-color: var(--bg-color);
     border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow-small);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .testimonial-content {
@@ -1138,18 +1183,20 @@ button {
 }
 
 .contact-card {
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
     padding: 1.5rem;
-    background-color: var(--bg-color);
     border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow-small);
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .contact-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .contact-card-icon {
@@ -1218,10 +1265,10 @@ button {
 }
 
 .contact-form-container {
-    background-color: var(--bg-color);
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
     padding: 2rem;
     border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow-medium);
 }
 
 .contact-form {
@@ -1267,6 +1314,7 @@ button {
 .input-group input:focus,
 .input-group textarea:focus {
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .textarea-group {
