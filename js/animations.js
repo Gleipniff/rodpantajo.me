@@ -3,36 +3,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
     
-    // Add performance optimization with requestAnimationFrame
-    const throttle = (func, limit) => {
-        let inThrottle;
-        return function() {
-            const args = arguments;
-            const context = this;
-            if (!inThrottle) {
-                func.apply(context, args);
-                inThrottle = true;
-                requestAnimationFrame(() => inThrottle = false);
-            }
-        }
-    };
-
-    // Enhance animateOnScroll with performance optimization
-    const animateOnScroll = throttle(() => {
-        const animatedElements = document.querySelectorAll('.animate-on-scroll:not(.animated)');
+    // Animate elements when they come into view
+    const animateOnScroll = function() {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
         
         animatedElements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight * 0.85;
+            const screenPosition = window.innerHeight / 1.2;
             
             if (elementPosition < screenPosition) {
                 const animation = element.getAttribute('data-animation') || 'fade-in';
-                requestAnimationFrame(() => {
-                    element.classList.add(animation, 'animated');
-                });
+                element.classList.add(animation);
+                element.classList.add('animated');
             }
         });
-    }, 16);
+    };
     
     // Initial check for elements in view
     setTimeout(animateOnScroll, 500);
@@ -88,36 +73,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animate hero section after preloader
     setTimeout(animateHero, 600);
     
-    // Add smooth parallax effect with better performance
-    const parallaxEffect = () => {
+    // Parallax effect for hero section
+    const parallaxEffect = function() {
         const heroSection = document.querySelector('.hero');
         const shapes = document.querySelectorAll('.shape');
         
         if (heroSection && shapes.length > 0) {
-            let ticking = false;
-            
-            window.addEventListener('mousemove', (e) => {
-                if (!ticking) {
-                    requestAnimationFrame(() => {
-                        const mouseX = e.clientX;
-                        const mouseY = e.clientY;
-                        
-                        const windowWidth = window.innerWidth;
-                        const windowHeight = window.innerHeight;
-                        
-                        shapes.forEach((shape, index) => {
-                            const shiftValue = (index + 1) * 15;
-                            const translateX = (mouseX / windowWidth - 0.5) * shiftValue;
-                            const translateY = (mouseY / windowHeight - 0.5) * shiftValue;
-                            
-                            shape.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
-                        });
-                        
-                        ticking = false;
-                    });
+            window.addEventListener('mousemove', function(e) {
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+                
+                shapes.forEach((shape, index) => {
+                    const shiftValue = (index + 1) * 15;
                     
-                    ticking = true;
-                }
+                    const translateX = (mouseX / windowWidth - 0.5) * shiftValue;
+                    const translateY = (mouseY / windowHeight - 0.5) * shiftValue;
+                    
+                    shape.style.transform = `translate(${translateX}px, ${translateY}px)`;
+                });
             });
         }
     };
@@ -184,35 +160,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize skill bars animation
     setTimeout(animateSkillBars, 500);
     
-    // Add smooth counter animation with easing
-    const animateCounters = () => {
-        const counters = document.querySelectorAll('.counter:not(.counted)');
-        
-        const easeOutQuad = t => t * (2 - t);
+    // Animate counter numbers
+    const animateCounters = function() {
+        const counters = document.querySelectorAll('.counter');
         
         counters.forEach(counter => {
             const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 2000;
-            const startTime = performance.now();
+            const duration = 2000; // milliseconds
+            const step = Math.ceil(target / (duration / 16)); // 60fps
             
-            const updateCounter = currentTime => {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                
-                const currentValue = Math.round(target * easeOutQuad(progress));
-                counter.textContent = currentValue;
-                
-                if (progress < 1) {
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.classList.add('counted');
-                }
-            };
+            let current = 0;
             
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        requestAnimationFrame(updateCounter);
+                        const timer = setInterval(() => {
+                            current += step;
+                            counter.textContent = current;
+                            
+                            if (current >= target) {
+                                counter.textContent = target;
+                                clearInterval(timer);
+                            }
+                        }, 16);
+                        
                         observer.unobserve(counter);
                     }
                 });
@@ -268,39 +239,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll reveal
     scrollReveal();
     
-    // Add smooth tilt effect with transform3d
-    const initTiltEffect = () => {
+    // Tilt effect for project cards
+    const initTiltEffect = function() {
         const tiltElements = document.querySelectorAll('.tilt-effect');
         
         tiltElements.forEach(element => {
-            let ticking = false;
+            element.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const tiltX = (y - centerY) / 10;
+                const tiltY = (centerX - x) / 10;
+                
+                this.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+            });
             
-            const handleTilt = e => {
-                if (!ticking) {
-                    requestAnimationFrame(() => {
-                        const rect = element.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        
-                        const centerX = rect.width / 2;
-                        const centerY = rect.height / 2;
-                        
-                        const tiltX = (y - centerY) / 10;
-                        const tiltY = (centerX - x) / 10;
-                        
-                        element.style.transform = 
-                            `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.05, 1.05, 1.05)`;
-                        
-                        ticking = false;
-                    });
-                    
-                    ticking = true;
-                }
-            };
-            
-            element.addEventListener('mousemove', handleTilt);
-            element.addEventListener('mouseleave', () => {
-                element.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
             });
         });
     };
@@ -310,6 +269,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Animate on hover
     const initHoverAnimations = function() {
+        const hoverElements = document.querySelectorAll('.hover-animate');
+        
+        hoverElements.  {
         const hoverElements = document.querySelectorAll('.hover-animate');
         
         hoverElements.forEach(element => {
